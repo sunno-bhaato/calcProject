@@ -32,7 +32,8 @@ public class calcProj extends funcs{
                     double num5 = abc.nextDouble();     //exception handling baaki hai
                     System.out.print("enter number 2 : ");
                     double num6 = abc.nextDouble();
-                    System.out.println("Sum : "+(num5/num6)); 
+                    if(num6!=0){System.out.println("Sum : "+(num5/num6)); }
+                    else{System.out.println("Can't divide by zero!");}
                     break;
 
                 case 4:
@@ -48,7 +49,8 @@ public class calcProj extends funcs{
                     double base = abc.nextDouble();
                     System.out.print("Enter the number : ");
                     double num = abc.nextDouble();
-                    System.out.print(log(num)/log(base));
+                    if(base>0 && num>0 && base!=1){System.out.print(log(num)/log(base));}
+                    else{System.out.println("Can't evaluate logarithm.")}
                     break;
 
                 case 6:
@@ -144,7 +146,7 @@ class funcs{
     public static double exp(double a){
         double result = 0;
         for (int i=0;i<10;i++) {
-            result += pow(a,i) * fact(i);
+            result += pow(a,i) / fact(i);
         }
         return result;
     }
